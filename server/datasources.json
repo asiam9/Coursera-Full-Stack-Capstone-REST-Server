@@ -1,0 +1,44 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "geo": {
+    "name": "geo",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "address": "{street},{city},{zipcode}",
+            "sensor": "{sensor=false}"
+          },
+          "responsePath": "$.results[0].geometry.location"
+        },
+        "functions": {
+          "geocode": [
+            "street",
+            "city",
+            "zipcode"
+          ]
+        }
+      }
+    ]
+  },
+  "capstoneMongoDb": {
+    "host": "192.155.243.25",
+    "port": 10090,
+    "url": "mongodb://1c81a80c-b973-4798-a02e-6b5b5655e6b0:c5358842-bac9-4798-ac46-055829571d96@192.155.243.25:10090/db",
+    "database": "db",
+    "password": "c5358842-bac9-4798-ac46-055829571d96",
+    "name": "capstoneMongoDb",
+    "user": "1c81a80c-b973-4798-a02e-6b5b5655e6b0",
+    "connector": "mongodb"
+  }
+}

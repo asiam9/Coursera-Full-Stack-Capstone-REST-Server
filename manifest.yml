@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 1024M
+  instances: 1
+  domain: mybluemix.net
+  name: sisson-capstone-loopb
+  host: sisson-capstone-loopb
+  disk_quota: 1024M
+  services:
+  - sisson-cap-loop-mongo

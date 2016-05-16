@@ -1,0 +1,34 @@
+{
+  "name": "sisson-contacts",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "first": {
+      "type": "string",
+      "required": true
+    },
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false
+    },
+    "last": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
